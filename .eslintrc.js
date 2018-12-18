@@ -35,6 +35,9 @@ module.exports = {
     ],
     'no-console': 'off',
     'no-unused-vars': 'warn',
-    'no-mixed-spaces-and-tabs': 'off'
+    'no-mixed-spaces-and-tabs': 'off',
+    'no-tabs': 'off',
+    'indent': 'off',
+    'eol-last': 'off'
   }
 }
