@@ -1,11 +1,13 @@
 <template>
-	<h1>hello world</h1>
+  <home-header></home-header>
 </template>
-
 <script type="text/javascript">
-	export default {
-		name: 'home'
-	}
+import homeHeader from './components/header'
+export default {
+  name: 'home',
+  components: {
+    homeHeader
+  }
+}
 </script>
-
-<style type="text/css"></style>
+<style lang="stylus" scoped></style>
