@@ -1,6 +1,6 @@
 <template>
 	<div class="icons">
-    <swiper class="swiper-container">
+    <swiper class="swiper-container" :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -9,6 +9,7 @@
           <p class="icon-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -17,6 +18,11 @@ export default {
   name: 'HomeIcons',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true,
+        autoplay: 0
+      },
       iconList: [
         {
           id: '1',
@@ -87,7 +93,13 @@ export default {
   .icons >>> .swiper-container
     width 100%
     height 0
-    padding-bottom 50%
+    padding-bottom 54%
+  .icons >>> .swiper-pagination
+    position absolute
+    bottom 0
+    .swiper-pagination-bullet
+      width .12rem
+      height .12rem
   .icon
     position relative
     overflow hidden
