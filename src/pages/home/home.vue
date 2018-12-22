@@ -1,13 +1,20 @@
 <template>
-  <home-header></home-header>
+	<div>
+		<home-header></home-header>
+  	<home-swiper></home-swiper>
+  	<div>你好</div>
+	</div>
 </template>
 <script type="text/javascript">
-import homeHeader from './components/header'
+import HomeHeader from './components/header'
+import HomeSwiper from './components/swiper'
 export default {
   name: 'home',
   components: {
-    homeHeader
+    HomeHeader,
+    HomeSwiper
   }
 }
 </script>
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+</style>
