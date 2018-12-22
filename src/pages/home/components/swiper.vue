@@ -41,8 +41,8 @@ export default {
 <style lang="stylus" scoped>
 	// scoped表示只修饰当前组件中的类名，.swiper-pagination-bullet-active不在组件中显示
 	.wrapper >>> .swiper-pagination
-									.swiper-pagination-bullet-active
-										background-color #fff
+		.swiper-pagination-bullet-active
+			background-color #fff
 	.wrapper
 		overflow hidden
 		width 100%
