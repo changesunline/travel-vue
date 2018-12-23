@@ -15,7 +15,7 @@ import HomeRecommend from './components/recommend'
 import HomeWeekend from './components/weekend'
 import axios from 'axios'
 export default {
-  name: 'home',
+  name: 'Home',
   data () {
     return {
       city: '城市',
