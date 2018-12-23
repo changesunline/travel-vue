@@ -1,9 +1,9 @@
 <template>
 	<div class="wrapper">
-		<swiper :options="swiperOption" ref="mySwiper">
+		<swiper :options="swiperOption" v-if="showSwiper">
 	    <!-- slides -->
-	    <swiper-slide v-for="item of swiperList" :key="item.id">
-	    	<img class="swiper-img" :src="item.imgURL">
+	    <swiper-slide v-for="item of List" :key="item.id">
+	    	<img class="swiper-img" :src="item.imgUrl">
 	    </swiper-slide>
 	    <!-- Optional controls -->
 	    <div class="swiper-pagination"  slot="pagination"></div>
@@ -13,31 +13,25 @@
 <script type="text/javascript">
 export default {
   name: 'HomeSwiper',
+  props: {
+  	List: Array
+  },
   data () {
-      return {
-        swiperOption: {
-          pagination: '.swiper-pagination',
-          paginationClickable: true,
-          loop: true,
-          autoplay: 3000,
-          autoplayDisableOnInteraction: false
-        },
-        swiperList: [
-        	{
-        		id: '1',
-        		imgURL: 'http://img1.qunarzz.com/piao/fusion/1811/b7/1e9c4ca462741f02.jpg_750x200_842d5261.jpg'
-        	},
-        	{
-        		id: '2',
-        		imgURL: 'http://img1.qunarzz.com/piao/fusion/1811/a8/cb43c4ac6c215d02.jpg_750x200_83dee994.jpg'
-        	},
-        	{
-        		id: '3',
-        		imgURL: 'http://img1.qunarzz.com/piao/fusion/1812/47/a51fe403715df102.jpg_750x200_085792b6.jpg'
-        	}
-        ]
+    return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false
       }
     }
+  },
+  computed: {
+  	showSwiper () {
+  		return this.List.length
+  	}
+  }
 }
 </script>
 <style lang="stylus" scoped>

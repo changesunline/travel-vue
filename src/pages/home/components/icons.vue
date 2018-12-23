@@ -1,10 +1,10 @@
 <template>
 	<div class="icons">
-    <swiper class="swiper-container" :options="swiperOption">
+    <swiper class="swiper-container" :options="swiperOption" v-if="showSwiper">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
-            <img class="icon-img-content" :src="item.imgURL">
+            <img class="icon-img-content" :src="item.imgUrl">
           </div>
           <p class="icon-desc">{{item.desc}}</p>
         </div>
@@ -16,66 +16,22 @@
 <script type="text/javascript">
 export default {
   name: 'HomeIcons',
+  props: {
+    List: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true,
-        autoplay: 0
-      },
-      iconList: [
-        {
-          id: '1',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1811/f6/e54fad3ea337b02.gif',
-          desc: '年终大促赶快来抽奖'
-        },
-        {
-          id: '2',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        },
-        {
-          id: '3',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1803/75/eca3ce656c886502.png',
-          desc: '德天瀑布'
-        },
-        {
-          id: '4',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-          desc: '自然风光'
-        },
-        {
-          id: '5',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1811/f6/e54fad3ea337b02.gif',
-          desc: '年终大促赶快来抽奖'
-        },
-        {
-          id: '6',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        },
-        {
-          id: '7',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1803/75/eca3ce656c886502.png',
-          desc: '德天瀑布'
-        },
-        {
-          id: '8',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-          desc: '自然风光'
-        },
-        {
-          id: '9',
-          imgURL: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-          desc: '全部玩乐'
-        }
-      ]
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.List.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -83,6 +39,9 @@ export default {
         pages[page].push(item)
       })
       return pages
+    },
+    showSwiper () {
+      return this.List.length
     }
   }
 }
