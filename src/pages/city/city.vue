@@ -3,7 +3,6 @@
     <city-header></city-header>
     <city-search></city-search>
   </div>
-  
 </template>
 <script type="text/javascript">
   import CityHeader from './components/header'
