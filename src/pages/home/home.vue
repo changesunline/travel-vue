@@ -18,7 +18,7 @@ export default {
   name: 'home',
   data () {
     return {
-      city: 'body',
+      city: '城市',
       swiperList: [],
       iconList: [],
       recommendList: [],
