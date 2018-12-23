@@ -1,18 +1,14 @@
 <template>
   <ul class="list">
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
+    <li class="item" v-for="(val, key) of clist" :key="key">{{key}}</li>
   </ul>
 </template>
 <script type="text/javascript">
   export default {
-    name: 'CityAlphabet'
+    name: 'CityAlphabet',
+    props: {
+      clist: Object
+    }
   }
 </script>
 <style lang="stylus" scoped>
