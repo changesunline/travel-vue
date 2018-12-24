@@ -5,7 +5,7 @@
 		</div>
 		<div class="search-content" ref="wrapper" v-show="keyWord">
 			<ul>
-				<li class="search-item border-bottom" v-for="item of result" :key="item.id">
+				<li class="search-item border-bottom" v-for="item of result" :key="item.id" @click="handleClick(item.name)">
 					{{item.name}}
 				</li>
 				<li class="search-item border-bottom" v-show="hasNoData">没有更多数据</li>
@@ -34,6 +34,12 @@
     },
     mounted () {
     	this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    methods: {
+        handleClick (city) {
+          this.$store.commit('changeCity', city)
+          this.$router.push('/')
+        }
     },
     watch: {
     	keyWord () {

@@ -16,12 +16,13 @@
   </div>
 </template>
 <script type="text/javascript">
-export default {
-  name: 'HomeHeader',
-  props: {
-  	city: String
-  }
-}
+	import { mapState } from 'vuex'
+	export default {
+	  name: 'HomeHeader',
+	  computed: {
+    	...mapState(['city'])
+    }
+	}
 </script>
 <style lang="stylus" scoped>
 	@import '~styles/varibles.styl'
@@ -47,7 +48,8 @@ export default {
 			color #ccc
 			padding-left .2rem
 		.header-right
-			width 1.24rem
+			min-width 1.04rem
+			padding 0 .1rem
 			float right
 			text-align center
 			color #fff
