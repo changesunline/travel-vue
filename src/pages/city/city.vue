@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :hclist="hotCities" :clist="cities"></city-list>
-    <city-alphabet :clist="cities"></city-alphabet>
+    <city-list :hclist="hotCities" :clist="cities" :letterDirec="letter"></city-list>
+    <city-alphabet :clist="cities" @change="handleAphabet"></city-alphabet>
   </div>
 </template>
 <script type="text/javascript">
@@ -17,7 +17,8 @@
     data () {
       return {
         cities: {},
-        hotCities: []
+        hotCities: [],
+        letter: ''
       }
     },
     components: {
@@ -38,6 +39,9 @@
           this.cities = data.cities
           this.hotCities = data.hotCities
         }
+      },
+      handleAphabet (letter) {
+        this.letter = letter
       }
     },
     mounted () {

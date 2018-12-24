@@ -17,7 +17,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="area" v-for="(val, key) of clist" :key="key">
+			<div class="area" v-for="(val, key) of clist" :key="key" :ref="key">
 				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
 					<div class="item border-bottom" v-for="item of val" :key="item.id">{{item.name}}</div>
@@ -32,10 +32,19 @@
     name: 'CityList',
     props: {
     	clist: Object,
-    	hclist: Array
+    	hclist: Array,
+    	letterDirec: String
     },
     mounted () {
     	this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    watch: {
+    	letterDirec () {
+    		if (this.letterDirec) {
+    			const element = this.$refs[this.letterDirec][0]
+    			this.scroll.scrollToElement(element)
+    		}
+    	}
     }
   }
 </script>
