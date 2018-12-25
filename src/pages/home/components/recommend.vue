@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="hot">
 		<div class="title">热销推荐</div>
 		<ul>
 			<router-link tag="li" :to="'/detail/' + item.id"

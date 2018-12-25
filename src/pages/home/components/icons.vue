@@ -59,33 +59,38 @@ export default {
     .swiper-pagination-bullet
       width .12rem
       height .12rem
-  .icon
-    position relative
+  .icons
     overflow hidden
-    float left
-    width 25%
+    width 100%
     height 0
-    box-sizing border-box
-    padding-bottom 25%
-    .icon-img
-      position absolute
-      top 0
-      left 0
-      right 0
-      bottom .50rem
-      padding-top .3rem
-      .icon-img-content
-        display block
-        margin 0 auto
-        height 100%
-    .icon-desc
-      position absolute
-      right 0
-      left 0
-      bottom 0
-      height .50rem
-      line-height .50rem
-      text-align center
-      color $darkTextColor
-      ellipsis()
+    padding-bottom 54%
+    .icon
+      position relative
+      overflow hidden
+      float left
+      width 25%
+      height 0
+      box-sizing border-box
+      padding-bottom 25%
+      .icon-img
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom .50rem
+        padding-top .3rem
+        .icon-img-content
+          display block
+          margin 0 auto
+          height 100%
+      .icon-desc
+        position absolute
+        right 0
+        left 0
+        bottom 0
+        height .50rem
+        line-height .50rem
+        text-align center
+        color $darkTextColor
+        ellipsis()
 </style>
