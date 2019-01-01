@@ -74,5 +74,5 @@
 			width .64rem
 			text-align center
 			font-size .4rem
-			color #000
+			color #fff
 </style>
