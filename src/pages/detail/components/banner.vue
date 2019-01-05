@@ -10,11 +10,14 @@
 				<div class="banner-title">{{this.sightName}}</div>
 			</div>
 		</div>
-		<common-gallary :images="gallaryImgs" v-show="showGallary" @close="handleGallary"></common-gallary>
+		<common-fade>
+			<common-gallary :images="gallaryImgs" v-show="showGallary" @close="handleGallary"></common-gallary>
+		</common-fade>
 	</div>
 </template>
 <script type="text/javascript">
 	import CommonGallary from 'common/gallary/gallary'
+	import CommonFade from 'common/fade/fade'
 	export default {
 		name: 'DetailBanner',
 		props: {
@@ -36,7 +39,8 @@
 			}
 		},
 		components: {
-			CommonGallary
+			CommonGallary,
+			CommonFade
 		}
 	}
 </script>
